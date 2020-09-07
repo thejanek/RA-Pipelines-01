@@ -8,6 +8,8 @@ trigger: none
 #    #trigger: true
 #  - pipeline: Auto_Trigger_for_P3.0-B  # Name of the pipeline resource
 #    project: Pipelines_project
+
+
 #    source: 2.2 - Azure RBAC pipeline # Name of the triggering pipeline
 
    
