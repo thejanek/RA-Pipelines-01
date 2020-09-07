@@ -1,0 +1,35 @@
+trigger: none
+
+# resources:
+#  pipelines:
+#  - pipeline: Auto_Trigger_for_P2.2  # Name of the pipeline resource
+#    project: Pipelines_project
+#    source: 1.0 - Initial Verification # Name of the triggering pipeline
+#    trigger: 
+#       branches:
+#       - master
+
+stages: 
+- stage: RBAC_Deployment
+  displayName: "RBAC_Deployment"
+  jobs:
+    - job: job_RBAC_Deployment
+      pool: 
+        vmImage: 'ubuntu-latest'
+      steps:
+        - pwsh: | 
+            Write-Host 'Verification_of_existing' -ForegroundColor Green
+          displayName: 'Verification_of_existing'
+          name: 'Verification_of_existing'
+          errorActionPreference: stop
+          ignoreLASTEXITCODE: true
+          continueOnError: false
+          enabled: true
+        - pwsh: | 
+            Write-Host "RBAC_Deployment" -ForegroundColor Green
+          displayName: 'RBAC_Deployment'
+          name: 'RBAC_Deployment'
+          errorActionPreference: stop
+          ignoreLASTEXITCODE: true
+          continueOnError: false
+          enabled: true  

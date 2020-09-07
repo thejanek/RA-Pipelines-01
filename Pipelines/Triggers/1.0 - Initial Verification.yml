@@ -1,0 +1,71 @@
+trigger: 
+  - LJ-Branch
+
+
+# variables at pipeline level
+variables:
+- template: /Pipelines/Variables/Policies/Paths_var.yml
+- template: /Pipelines/Variables/Policies/Pipeline_scope_var.yml
+
+
+stages: 
+- stage: Local_Repositoy_Validation
+  displayName: "Local_Repositoy_Validation"
+  jobs:
+    - job: Validation_job
+      pool: 
+        vmImage: ${{variables.vmImage}}
+      steps:
+        - powershell: |
+            .\JSON_Validate.ps1
+          displayName: 'JSON Validation'
+          name: 'Validate_JSON'
+          workingDirectory: ${{variables.Powershell_Triggers_path}}
+          errorActionPreference: stop
+          ignoreLASTEXITCODE: true
+          continueOnError: false
+          enabled: true
+
+
+- stage: Azure_Environment_Validation
+  displayName: "Azure_Environment_Validation"
+  jobs:
+    - job: Azure_Environment_Validation_job
+      pool: 
+        vmImage: ${{variables.vmImage}}
+      steps:
+        - task: AzurePowerShell@5
+          inputs:
+            azureSubscription: ${{variables.Azure_Service_Principal_Connection}}
+            ScriptType: 'InlineScript'
+            Inline: |
+              .\Azure_Environment_Check.ps1
+            errorActionPreference: 'stop'
+            azurePowerShellVersion: 'LatestVersion'
+            workingDirectory: ${{variables.Powershell_Triggers_path}}
+        - pwsh: | 
+            Write-Host "Permission veryfication for RBAC - OK" -ForegroundColor Green
+          displayName: 'Perm verification for RBAC'
+          name: 'Perm_verification_for_RBAC'
+          errorActionPreference: stop
+          ignoreLASTEXITCODE: true
+          continueOnError: false
+          enabled: true 
+
+        - pwsh: | 
+            Write-Host "Permission veryfication for Azure Policies - OK" -ForegroundColor Green
+          displayName: 'Perm verification for Azure Policies'
+          name: 'Perm_verification_for_Azure_Policies'
+          errorActionPreference: stop
+          ignoreLASTEXITCODE: true
+          continueOnError: false
+          enabled: true
+
+        - pwsh: | 
+            Write-Host "Perm veryfication for Azure Resource deployment - OK" -ForegroundColor Green
+          displayName: 'Perm_verification_for_RBAC_deployment'
+          name: 'Permission_verification_for_RBAC_deployment'
+          errorActionPreference: stop
+          ignoreLASTEXITCODE: true
+          continueOnError: false
+          enabled: true

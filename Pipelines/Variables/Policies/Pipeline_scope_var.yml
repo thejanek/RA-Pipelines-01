@@ -1,0 +1,7 @@
+variables:
+  - name: vmImage
+    value: 'windows-latest'
+  - name: Project_info_full_file_name
+    value: Project-01.json
+  - name: Azure_Service_Principal_Connection
+    value: 'LJ-sp-CGI-SEAL'

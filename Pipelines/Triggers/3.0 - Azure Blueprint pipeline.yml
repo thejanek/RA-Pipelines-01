@@ -1,0 +1,38 @@
+trigger: none
+
+# resources:
+#  pipelines:
+#  - pipeline: Auto_Trigger_for_P3.0-A  # Name of the pipeline resource
+#    project: Pipelines_project
+#    source: 2.1 - Azure Policies pipeline # Name of the triggering pipeline
+#    #trigger: true
+#  - pipeline: Auto_Trigger_for_P3.0-B  # Name of the pipeline resource
+#    project: Pipelines_project
+#    source: 2.2 - Azure RBAC pipeline # Name of the triggering pipeline
+   
+
+
+stages: 
+- stage: Blueprint_Deployment
+  displayName: "Blueprint_Deployment"
+  jobs:
+    - job: job_Blueprint_Deployment
+      pool: 
+        vmImage: 'ubuntu-latest'
+      steps:
+        - pwsh: | 
+            Write-Host 'Verification_of_existing' -ForegroundColor Green
+          displayName: 'Verification_of_existing'
+          name: 'Verification_of_existing'
+          errorActionPreference: stop
+          ignoreLASTEXITCODE: true
+          continueOnError: false
+          enabled: true
+        - pwsh: | 
+            Write-Host "Blueprint_Deployment" -ForegroundColor Green
+          displayName: 'Blueprint_Deployment'
+          name: 'Blueprint_Deployment'
+          errorActionPreference: stop
+          ignoreLASTEXITCODE: true
+          continueOnError: false
+          enabled: true  
