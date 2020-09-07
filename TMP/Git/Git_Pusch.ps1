@@ -66,4 +66,4 @@ Pushing new commit named ' + $current_date + ' to ' + $repo + '.
 # END
 Write-Host '
 -----------------------------------------------------------------------------------------------
-End of pushing to all repos.' -ForegroundColor DarkMagenta
+End of pushing to all repos. ' -ForegroundColor DarkMagenta
