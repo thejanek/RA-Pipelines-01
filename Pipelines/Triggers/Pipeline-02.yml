@@ -34,20 +34,20 @@ stages:
             workingDirectory: ${{variables.Powershell_Triggers_path}}            
 
 
-# - stage: Stage_nr2
-#   displayName: "Stage_nr2"
-#   dependsOn: Stage_nr1
-#   jobs:
-#     - job: Stage_nr2_job_nr1
-#       pool: 
-#         vmImage: ${{variables.vmImage}}
-#       steps:
-#         - task: AzurePowerShell@5
-#           inputs:
-#             azureSubscription: ${{variables.Azure_Connection}}
-#             ScriptType: 'InlineScript'
-#             Inline: |
-#               Write-Host "Place for PowerShell scripts..."
-#             errorActionPreference: 'stop'
-#             azurePowerShellVersion: 'LatestVersion'
-#             workingDirectory: ${{variables.Powershell_Triggers_path}}
+- stage: Stage_nr2
+  displayName: "Stage_nr2"
+  dependsOn: Stage_nr1
+  jobs:
+    - job: Stage_nr2_job_nr1
+      pool: 
+        vmImage: ${{variables.vmImage}}
+      steps:
+        - task: AzurePowerShell@5
+          inputs:
+            azureSubscription: ${{variables.Azure_Connection}}
+            ScriptType: 'InlineScript'
+            Inline: |
+              Write-Host "Place for PowerShell scripts..."
+            errorActionPreference: 'stop'
+            azurePowerShellVersion: 'LatestVersion'
+            workingDirectory: ${{variables.Powershell_Triggers_path}}
