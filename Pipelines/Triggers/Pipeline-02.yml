@@ -3,8 +3,8 @@ trigger: none
 
 # variables at pipeline level
 variables:
-- template: /Pipelines/Variables/Policies/Paths_var.yml
-- template: /Pipelines/Variables/Policies/Pipeline_scope_var.yml
+- template: /Pipelines/Variables/Paths_var.yml
+- template: /Pipelines/Variables/Pipeline_scope_var.yml
 
 
 resources:

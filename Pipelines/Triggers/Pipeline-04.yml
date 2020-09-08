@@ -1,5 +1,14 @@
 trigger: none
 
+
+
+# variables at pipeline level
+variables:
+- template: /Pipelines/Variables/Paths_var.yml
+- template: /Pipelines/Variables/Pipeline_scope_var.yml
+
+
+
 # resources:
 #  pipelines:
 #  - pipeline: Auto_Trigger_for_P3.0-A  # Name of the pipeline resource
