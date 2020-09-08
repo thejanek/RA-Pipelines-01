@@ -14,42 +14,42 @@ resources:
     source: Pipeline-01 # Name of the triggering pipeline
     trigger: 
       branches:
-      - LJ-Branch
+      - master
        
 
 stages: 
-- stage: Policies_Deployment
-  displayName: "Policies_Deployment"
+- stage: Stage_nr1
+  displayName: "Stage_nr1"
   jobs:
-    - job: Policies_Deployment_job
+    - job: Stage_nr1_job_nr1
       pool: 
         vmImage: ${{variables.vmImage}}
       steps:
         - task: AzurePowerShell@5
           inputs:
-            azureSubscription: ${{variables.Azure_Service_Principal_Connection}}
+            azureSubscription: ${{variables.Azure_Connection}}
             ScriptType: 'InlineScript'
             Inline: |
-              .\Policy_Deployment.ps1
+              .\Get-Env.ps1
             errorActionPreference: 'stop'
             azurePowerShellVersion: 'LatestVersion'
             workingDirectory: ${{variables.Powershell_Triggers_path}}            
 
 
-- stage: Initiatives_Deployment
-  displayName: "Initiatives_Deployment"
-  dependsOn: Policies_Deployment
+- stage: Stage_nr2
+  displayName: "Stage_nr2"
+  dependsOn: Stage_nr1
   jobs:
-    - job: Initiatives_Deployment_job
+    - job: Stage_nr2_job
       pool: 
         vmImage: ${{variables.vmImage}}
       steps:
         - task: AzurePowerShell@5
           inputs:
-            azureSubscription: ${{variables.Azure_Service_Principal_Connection}}
+            azureSubscription: ${{variables.Azure_Connection}}
             ScriptType: 'InlineScript'
             Inline: |
-              Write-Host "Place for PowerShell script for Initiatives deployment."
+              Write-Host "Place for PowerShell scripts..."
             errorActionPreference: 'stop'
             azurePowerShellVersion: 'LatestVersion'
             workingDirectory: ${{variables.Powershell_Triggers_path}}

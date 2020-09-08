@@ -4,6 +4,6 @@ variables:
   - name: Project_info_full_file_name
     value: Project-01.json
   - name: Azure_Connection
-    value: 'RA-LJ-MI-Connection-01'
+    value: 'thejanek-Azure-Connection-01'
   - name: 'Project_Name'
     value: 'RA-Pipelines-01'
