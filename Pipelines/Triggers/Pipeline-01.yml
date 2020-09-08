@@ -15,15 +15,15 @@ stages:
       pool: 
         vmImage: ${{variables.vmImage}}
       steps:
-        - task: AzurePowerShell@5
-          inputs:
-            azureSubscription: ${{variables.Azure_Connection}}
-            ScriptType: 'InlineScript'
-            Inline: |
-              .\Get-Env.ps1
-            errorActionPreference: 'stop'
-            azurePowerShellVersion: 'LatestVersion'
-            workingDirectory: ${{variables.Powershell_Triggers_path}}
+        # - task: AzurePowerShell@5
+        #   inputs:
+        #     azureSubscription: ${{variables.Azure_Connection}}
+        #     ScriptType: 'InlineScript'
+        #     Inline: |
+        #       .\Get-Env.ps1
+        #     errorActionPreference: 'stop'
+        #     azurePowerShellVersion: 'LatestVersion'
+        #     workingDirectory: ${{variables.Powershell_Triggers_path}}
 
         - pwsh: | 
             Write-Host "Permission veryfication for RBAC - OK" -ForegroundColor Green
@@ -34,11 +34,11 @@ stages:
           continueOnError: false
           enabled: true 
 
-        - pwsh: | 
-            Write-Host "Permission veryfication for Azure Policies - OK" -ForegroundColor Green
-          displayName: 'Perm verification for Azure Policies'
-          name: 'Perm_verification_for_Azure_Policies'
-          errorActionPreference: stop
-          ignoreLASTEXITCODE: true
-          continueOnError: false
-          enabled: true
+        # - pwsh: | 
+        #     Write-Host "Permission veryfication for Azure Policies - OK" -ForegroundColor Green
+        #   displayName: 'Perm verification for Azure Policies'
+        #   name: 'Perm_verification_for_Azure_Policies'
+        #   errorActionPreference: stop
+        #   ignoreLASTEXITCODE: true
+        #   continueOnError: false
+        #   enabled: true
