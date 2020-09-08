@@ -4,12 +4,6 @@
 
 variables:
   - name: Powershell_Triggers_path
-    value: '.\Code\Policies\PowerShell\Triggers'
+    value: '.\Code\PowerShell\Triggers'
   - name: Powershell_Functions_path
-    value: '.\Code\Policies\PowerShell\Functions'
-  - name: Project_Specific_informations_path
-    value: '.\Implementations\Project_Specific_informations'
-  - name: Policy_Templates_path
-    value: '.\Code\Policies\Templates\Policies'
-  - name: Initiative_Templates_path
-    value: '.\Code\Policies\Templates\Initiatives'
+    value: '.\Code\PowerShell\Functions'
