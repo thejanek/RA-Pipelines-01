@@ -1,9 +1,10 @@
 Clear-Host
 ###############################################################################################
 # Variables
-$Remote_repos_list = ("github-CGI-SEAL-Team-Bravo", "GIT--CGI-SEAL-Team-Bravo")
-$Branch_Name = "LJ-Branch"
-$Local_Repo_path = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
+$Remote_repos_list = ("ra-pipelines-01")
+$Branch_Name = "master"
+# $Local_Repo_path = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
+$Local_Repo_path = "C:\Users\ljankowski1\Documents\Programing\Repos\Labs\RA-pipelines-01"
 
 
 ##############################################################################################
