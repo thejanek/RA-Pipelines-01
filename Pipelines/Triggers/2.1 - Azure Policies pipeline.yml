@@ -9,9 +9,9 @@ variables:
 
 resources:
   pipelines:
-  - pipeline: Auto_Trigger_for_Azure_Policies  # Name of the pipeline resource
-    project: CGI-SEAL-Team-Bravo
-    source: 1.0 - Initial Verification # Name of the triggering pipeline
+  - pipeline: Auto_Trigger_for_Pipeline-01  # Name of the pipeline resource
+    project: ${{variables.ProjectName}}
+    source: Pipeline-01 # Name of the triggering pipeline
     trigger: 
       branches:
       - LJ-Branch
