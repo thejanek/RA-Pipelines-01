@@ -1,3 +1,3 @@
-Get-Host "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+Write-Host "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 
 Get-AzContext
