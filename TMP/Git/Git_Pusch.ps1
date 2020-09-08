@@ -27,6 +27,7 @@ git remote -v
 ###############################################################################################
 # Add to "push" potential any new files
 git add . 
+
 Write-Host '
 ----------------------------------------------------------------
 Potentials new files were added to future commit. 
@@ -66,4 +67,4 @@ Pushing new commit named ' + $current_date + ' to ' + $repo + '.
 # END
 Write-Host '
 -----------------------------------------------------------------------------------------------
-End of pushing to all repos.' -ForegroundColor DarkMagenta
+End of pushing to all repos.   ' -ForegroundColor DarkMagenta
