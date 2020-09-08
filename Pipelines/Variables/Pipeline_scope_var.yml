@@ -6,4 +6,4 @@ variables:
   - name: Azure_Connection
     value: 'thejanek-Azure-Connection-01'
   - name: 'Project_Name'
-    value: 'RA-Pipelines-01'
+    value: RA-Pipelines-01
