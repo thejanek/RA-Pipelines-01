@@ -15,7 +15,7 @@ Set-Location -Path $Local_Repo_path | Out-Null
 # Show local Rerpo path
 Write-Host '
 -----------------------------------------------------------------------------------------------
-Local Repo path: ' -ForegroundColor  DarkMagenta
+Local Repo path: ' -ForegroundColor  DarkMagenta | Out-Null
 Get-Location
 
 ###############################################################################################
