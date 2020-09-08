@@ -1,6 +1,4 @@
-# trigger: none
-trigger:
-  - master
+trigger: none
 
 
 # variables at pipeline level
