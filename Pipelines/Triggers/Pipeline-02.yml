@@ -6,6 +6,8 @@ trigger:
 variables:
   - template: /Pipelines/Variables/Paths_var.yml
   - template: /Pipelines/Variables/Pipeline_scope_var.yml
+  - name: aaa
+    value: 'RA-Pipelines-01'
 
 
 
@@ -13,7 +15,7 @@ variables:
 resources:
   pipelines:
   - pipeline: Auto_Trigger_for_Pipeline-01  # Name of the pipeline resource
-    project: ${{variables.projectname}}
+    project: $(aaa)
     source: Pipeline-01 # Name of the triggering pipeline
     trigger: true
              
