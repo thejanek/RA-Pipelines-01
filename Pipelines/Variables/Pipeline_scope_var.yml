@@ -1,5 +1,5 @@
 variables:
-  - name: Project_Name
+  - name: projectname
     value: 'ra-pipelines-01'
   - name: vmImage
     value: 'windows-latest'
