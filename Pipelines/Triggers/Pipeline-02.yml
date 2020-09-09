@@ -1,33 +1,20 @@
-trigger: 
-  - master
+trigger: none
 
 
 # variables at pipeline level
 variables:
-  - template: /Pipelines/Variables/Paths_var.yml
-  - template: /Pipelines/Variables/Pipeline_scope_var.yml
-  - name: aaa
-    value: 'RA-Pipelines-01'
+- template: /Pipelines/Variables/Paths_var.yml
+- template: /Pipelines/Variables/Pipeline_scope_var.yml
 
-
-
-
-# resources:
-#   pipelines:
-#   - pipeline: Auto_Trigger_for_Pipeline-01  # Name of the pipeline resource
-#     project: $(aaa)
-#     source: Pipeline-01 # Name of the triggering pipeline
-#     trigger: true
-             
 
 resources:
   pipelines:
-  - pipeline: autotrigger  
-    project: $(aaa)
-    source: Pipeline-01 
+  - pipeline: Auto_Trigger_for_Pipeline-01  # Name of the pipeline resource
+    project: ${{ variables.projectname }}
+    source: Pipeline-01 # Name of the triggering pipeline
     trigger: true
              
-
+    
 stages: 
 - stage: Stage_nr1
   displayName: "Stage_nr1"
