@@ -11,7 +11,7 @@ variables:
 resources:
   pipelines:
   - pipeline: Auto_Trigger_for_Pipeline-01  # Name of the pipeline resource
-    project: RA-Pipelines-01
+    project: ${{variables.projectname}}
     source: Pipeline-01 # Name of the triggering pipeline
     trigger: true
              
