@@ -4,8 +4,10 @@ trigger:
 
 # variables at pipeline level
 variables:
-- template: /Pipelines/Variables/Paths_var.yml
-- template: /Pipelines/Variables/Pipeline_scope_var.yml
+  - template: /Pipelines/Variables/Paths_var.yml
+  - template: /Pipelines/Variables/Pipeline_scope_var.yml
+
+
 
 
 resources:
