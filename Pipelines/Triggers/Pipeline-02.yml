@@ -3,6 +3,7 @@ trigger: none
 
 # variables at pipeline level
 variables:
+- group: vargr1
 - template: /Pipelines/Variables/Paths_var.yml
 - template: /Pipelines/Variables/Pipeline_scope_var.yml
 
@@ -10,7 +11,7 @@ variables:
 resources:
   pipelines:
   - pipeline: Auto_Trigger_for_Pipeline-01  # Name of the pipeline resource
-    project:  ${{ variables.projectname }}
+    project: RA-Pipelines-01
     source: Pipeline-01 # Name of the triggering pipeline
     trigger: true
   
