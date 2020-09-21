@@ -1,14 +1,5 @@
 trigger: none
 
-parameters:
-- name: aaa
-  displayName: Pool Image
-  type: string
-  default: RA-Pipelines-01
-  values:
-  - RA-Pipelines-01
-  - RA-Pipelines-02
-
 
 # variables at pipeline level
 variables:
@@ -19,8 +10,8 @@ variables:
 
 resources:
   pipelines:
-  - pipeline: Auto_Trigger_for_Pipeline-01  # Name of the pipeline resource
-    project: ${{ parameters.aaa }}
+  - pipeline: Auto_Trigger_after_Pipeline-01  # Name of the pipeline resource
+    project: 'RA-Pipelines-01'
     source: Pipeline-01 # Name of the triggering pipeline
     trigger: true
   
