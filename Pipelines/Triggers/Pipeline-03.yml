@@ -6,7 +6,7 @@ trigger:
       - releases/v1.55
 
 
-# variables at pipeline level
+# variables at pipeline  level
 variables:
 - template: /Pipelines/Variables/Paths_var.yml
 - template: /Pipelines/Variables/Pipeline_scope_var.yml
