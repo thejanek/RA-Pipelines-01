@@ -1,7 +1,7 @@
 trigger: 
   branches:
     include:
-      - v1.53
+      - Releases/v1.54
 
 
 # variables at pipeline level

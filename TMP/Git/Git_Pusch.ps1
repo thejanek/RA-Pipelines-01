@@ -36,7 +36,7 @@ Potentials new files were added to future commit.
 
 ###############################################################################################
 # Get current date and time in specifivc format like: "2020-12-20--12:45--43"
-$current_date = Get-Date -Format yyyy-MM-dd--hh-mm
+$current_date = ((Get-Date -Format yyyy-MM-dd--hh-mm) + "---" + (Get-Date).Ticks)
 
 Write-Host ('
 ----------------------------------------------------------------
