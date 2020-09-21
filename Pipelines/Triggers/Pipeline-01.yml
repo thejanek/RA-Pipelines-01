@@ -1,9 +1,11 @@
-trigger: 
-  branches:
-    include:
-      - master
-    exclude:
-      - releases/1.44
+# trigger: 
+#   branches:
+#     include:
+#       - master
+#     exclude:
+#       - releases/1.44
+
+trigger: none
 
 
 

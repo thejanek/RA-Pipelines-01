@@ -1,4 +1,8 @@
-trigger: none
+trigger: 
+  branches:
+    include:
+      - master
+      - releases/1.45
 
 
 # variables at pipeline level
@@ -25,18 +29,11 @@ stages:
         vmImage: 'ubuntu-latest'
       steps:
         - pwsh: | 
-            Write-Host 'Verification_of_existing' -ForegroundColor Green
-          displayName: 'Verification_of_existing'
-          name: 'Verification_of_existing'
+            Write-Host 'AAAAAAAAAAAAAAAAAAAAAA' -ForegroundColor Green
+          displayName: 'DP--AAAAAAAAAAAAAAAAAAAAAAAAAAA'
+          name: 'N--AAAAAAAAAAAAAAAAAAAAAAAAAAA'
           errorActionPreference: stop
           ignoreLASTEXITCODE: true
           continueOnError: false
           enabled: true
-        - pwsh: | 
-            Write-Host "RBAC_Deployment" -ForegroundColor Green
-          displayName: 'RBAC_Deployment '
-          name: 'RBAC_Deployment'
-          errorActionPreference: stop
-          ignoreLASTEXITCODE: true
-          continueOnError: false
-          enabled: true  
+        
