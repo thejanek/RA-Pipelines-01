@@ -64,7 +64,7 @@ $Last_characters_from_Tag = $Last_Tag_Name.Split(".") | Select-Object -Last 1
 # Convert to intiger (Int32)
 $Last_characters_from_Tag_Int = [int]$Last_characters_from_Tag
 
-# Add 1 
+# Add 1 to number 
 $New_number = $Last_characters_from_Tag_Int + 1
 
 # Current Tag Name
