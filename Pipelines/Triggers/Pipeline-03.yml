@@ -31,7 +31,7 @@ stages:
         - pwsh: | 
             Write-Host 'AAAAAAAAAAAAAAAAAAAAAA' -ForegroundColor Green
           displayName: 'DP--AAAAAAAAAAAAAAAAAAAAAAAAAAA'
-          name: 'N--AAAAAAAAAAAAAAAAAAAAAAAAAAA'
+          name: 'N__AAAAAAAAAAAAAAAAAAAAAAAAAA'
           errorActionPreference: stop
           ignoreLASTEXITCODE: true
           continueOnError: false
