@@ -70,8 +70,8 @@ $New_number = $Last_characters_from_Tag_Int + 1
 # Current Tag Name
 $New_Tag_Name = (($Last_Tag_Name.Split(".") | Select-Object -First 1) + "." + [string]$New_number) 
 
-$New_Tag_Name
-
+# Add new tag
+    git tag $New_Tag_Name
 
 ###############################################################################################
 # Push to all repos from list of $Remote_repos_list and branch $Branch_Name
