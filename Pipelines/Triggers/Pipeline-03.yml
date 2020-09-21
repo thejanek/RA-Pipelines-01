@@ -34,7 +34,7 @@ stages:
           enabled: true
         - pwsh: | 
             Write-Host "RBAC_Deployment" -ForegroundColor Green
-          displayName: 'RBAC_Deployment'
+          displayName: 'RBAC_Deployment '
           name: 'RBAC_Deployment'
           errorActionPreference: stop
           ignoreLASTEXITCODE: true
