@@ -1,9 +1,9 @@
-trigger: 
+trigger:
   branches:
     include:
-      - master
+    - master
     exclude:
-      - releases/v1.56
+    - releases/*
 
 
 # variables at pipeline  level
