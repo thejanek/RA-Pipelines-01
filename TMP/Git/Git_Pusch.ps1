@@ -49,19 +49,43 @@ Write-Host ('
 New commit named ' + $current_date + ' was created.
 (by "git commit -am ' + $current_date + ')') -ForegroundColor Cyan
 
+###############################################################################################
+# Adding new Release - it is the same as tag so it is new tag name
+
+# Getting list of tags (like: v1.30, v1.31, v1.32...)
+$List_of_all_Tags = git tag
+
+# Select last charcter of tak name
+$Last_Tag_Name = $List_of_all_tags | Select-Object -Last 1 
+
+# Select last characters after "." (like from "v2.10" it will be "10")
+$Last_characters_from_Tag = $Last_Tag_Name.Split(".") | Select-Object -Last 1
+
+# Convert to intiger (Int32)
+$Last_characters_from_Tag_Int = [int]$Last_characters_from_Tag
+
+# Add 1 
+$New_number = $Last_characters_from_Tag_Int + 1
+
+# Current Tag Name
+$New_Tag_Name = (($Last_Tag_Name.Split(".") | Select-Object -First 1) + "." + [string]$New_number) 
+
+$New_Tag_Name
+
 
 ###############################################################################################
 # Push to all repos from list of $Remote_repos_list and branch $Branch_Name
 foreach ($repo in $Remote_repos_list) {
     Write-Host ('
 ----------------------------------------------------------------
-Repo name   : ' + $repo + '
-Branch name : ' + $Branch_Name + '
+Repo Name               : ' + $repo + '
+Branch Name             : ' + $Branch_Name + '
+Release Name (Tag Name) : ' + $New_Tag_Name + '
 
 Pushing new commit named ' + $current_date + ' to ' + $repo + '.
-(by "git push ' + $repo + ' ' + $Branch_Name + ')') -ForegroundColor Yellow
+(by "git push ' + $repo + ' ' + $Branch_Name + ' ' + $New_Tag_Name + ')') -ForegroundColor Yellow
 
-    git push $repo $Branch_Name
+    git push $repo $Branch_Name $New_Tag_Name
 }
 
 ###############################################################################################
