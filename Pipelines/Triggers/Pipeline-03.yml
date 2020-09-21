@@ -1,7 +1,7 @@
 trigger: 
   branches:
     include:
-      - Releases/v1.54
+      - releases/v1.54
 
 
 # variables at pipeline level
@@ -28,7 +28,7 @@ stages:
         vmImage: 'ubuntu-latest'
       steps:
         - pwsh: | 
-            Write-Host 'AAAAAAAAAAAAAAAAAAAAAA' -ForegroundColor Green
+            Write-Host 'Release v1.54' -ForegroundColor Green
           displayName: 'DP--AAAAAAAAAAAAAAAAAAAAAAAAAAA'
           name: 'N__AAAAAAAAAAAAAAAAAAAAAAAAAA'
           errorActionPreference: stop
