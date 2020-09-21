@@ -71,7 +71,7 @@ $New_number = $Last_characters_from_Tag_Int + 1
 $New_Tag_Name = (($Last_Tag_Name.Split(".") | Select-Object -First 1) + "." + [string]$New_number) 
 
 # Add new tag
-    git tag $New_Tag_Name
+    # git tag $New_Tag_Name
 
 ###############################################################################################
 # Push to all repos from list of $Remote_repos_list and branch $Branch_Name
@@ -85,7 +85,7 @@ Release Name (Tag Name) : ' + $New_Tag_Name + '
 Pushing new commit named ' + $current_date + ' to ' + $repo + '.
 (by "git push ' + $repo + ' ' + $Branch_Name + ' ' + $New_Tag_Name + ')') -ForegroundColor Yellow
 
-    git push $repo $Branch_Name $New_Tag_Name
+    git push $repo $Branch_Name v1.55
 }
 
 ###############################################################################################
