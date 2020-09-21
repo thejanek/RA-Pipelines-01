@@ -2,6 +2,7 @@ trigger:
   branches:
     include:
       - master
+    exclude:
       - releases/v1.55
 
 
@@ -29,7 +30,7 @@ stages:
         vmImage: 'ubuntu-latest'
       steps:
         - pwsh: | 
-            Write-Host 'Release v1.55' -ForegroundColor Green
+            Write-Host 'Release v1.56' -ForegroundColor Green
           displayName: 'DP--AAAAAAAAAAAAAAAAAAAAAAAAAAA'
           name: 'N__AAAAAAAAAAAAAAAAAAAAAAAAAA'
           errorActionPreference: stop
