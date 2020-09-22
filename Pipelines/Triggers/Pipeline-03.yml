@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-    - releases/*
+    - releases/testbranch02
   # tags:
   #   include:
   #   - v1.61
