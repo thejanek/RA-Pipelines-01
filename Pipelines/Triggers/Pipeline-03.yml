@@ -1,12 +1,12 @@
 trigger:
   branches:
     include:
-    - releases/*
-  tags:
-    include:
-    - v1.61
-    exclude:
-    - v2.0
+    - ma*
+  # tags:
+  #   include:
+  #   - v1.61
+  #   exclude:
+  #   - v2.0
   
 
 
