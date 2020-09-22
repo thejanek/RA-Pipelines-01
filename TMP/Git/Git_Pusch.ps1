@@ -2,7 +2,7 @@ Clear-Host
 ###############################################################################################
 # Variables
 $Remote_repos_list = ("ra-pipelines-01")
-$Branch_Name = "master"
+$Branch_Name = "testbranch02" #"master"
 # $Local_Repo_path = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
 $Local_Repo_path = "C:\Users\ljankowski1\Documents\Programing\Repos\Labs\RA-pipelines-01"
 
