@@ -10,8 +10,6 @@ trigger:
 
 
 
-
-
 # variables at pipeline  level
 variables:
 - template: /Pipelines/Variables/Paths_var.yml

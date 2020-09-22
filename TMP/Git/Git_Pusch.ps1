@@ -81,11 +81,12 @@ foreach ($repo in $Remote_repos_list) {
 Repo Name               : ' + $repo + '
 Branch Name             : ' + $Branch_Name + '
 Release Name (Tag Name) : ' + $New_Tag_Name + '
+Commit Name             : ' + $current_date + '
 
 Pushing new commit named ' + $current_date + ' to ' + $repo + '.
 (by "git push ' + $repo + ' ' + $Branch_Name + ' ' + $New_Tag_Name + ')') -ForegroundColor Yellow
 
-    git push $repo $Branch_Name $New_Tag_Name
+    git push $repo $Branch_Name # $New_Tag_Name
 }
 
 ###############################################################################################
