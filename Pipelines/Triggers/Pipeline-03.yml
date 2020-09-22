@@ -4,7 +4,7 @@ trigger:
     - releases/*
   tags:
     include:
-    - v1.*
+    - v1.61
     exclude:
     - v2.0
 

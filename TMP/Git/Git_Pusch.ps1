@@ -86,7 +86,7 @@ Commit Name             : ' + $current_date + '
 Pushing new commit named ' + $current_date + ' to ' + $repo + '.
 (by "git push ' + $repo + ' ' + $Branch_Name + ' ' + $New_Tag_Name + ')') -ForegroundColor Yellow
 
-    git push $repo $Branch_Name # $New_Tag_Name
+    git push $repo $Branch_Name v1.61 # $New_Tag_Name
 }
 
 ###############################################################################################
