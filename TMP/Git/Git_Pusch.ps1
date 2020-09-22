@@ -1,15 +1,23 @@
 Clear-Host
 ###############################################################################################
 # Variables
-$Remote_repos_list = ("ra-pipelines-01")
-$Branch_Name = "master"
+$Remote_repos_list = ("ra-pipelines-01",`
+                      "git-manual")
+$Branch_Name = ("master",`
+                "master")
 # $Local_Repo_path = $env:SYSTEM_DEFAULTWORKINGDIRECTORY
-$Local_Repo_path = "C:\Users\ljankowski1\Documents\Programing\Repos\Labs\RA-pipelines-01"
+$Local_Repo_path = ("C:\Users\ljankowski1\Documents\Programing\Repos\Labs\RA-pipelines-01",`
+                    "C:\Users\ljankowski1\Documents\Programing\Repos\Labs\Git_Manual")
 
+$Number = 0
+
+###############################################################################################
+# Push to all repos from list of $Remote_repos_list and branch $Branch_Name 
+foreach ($repo in $Remote_repos_list) {
 
 ##############################################################################################
 # Set dafault local location for our Repository.
-Set-Location -Path $Local_Repo_path | Out-Null
+Set-Location -Path $Local_Repo_path[$Number] | Out-Null
 
 ###############################################################################################
 # Show local Rerpo path
@@ -74,19 +82,19 @@ $New_Tag_Name = (($Last_Tag_Name.Split(".") | Select-Object -First 1) + "." + [s
     git tag $New_Tag_Name
 
 ###############################################################################################
-# Push to all repos from list of $Remote_repos_list and branch $Branch_Name
-foreach ($repo in $Remote_repos_list) {
     Write-Host ('
 ----------------------------------------------------------------
 Repo Name               : ' + $repo + '
-Branch Name             : ' + $Branch_Name + '
+Branch Name             : ' + $Branch_Name[$Number] + '
 Release Name (Tag Name) : ' + $New_Tag_Name + '
 Commit Name             : ' + $current_date + '
 
 Pushing new commit named ' + $current_date + ' to ' + $repo + '.
-(by "git push ' + $repo + ' ' + $Branch_Name + ' ' + $New_Tag_Name + ')') -ForegroundColor Yellow
+(by "git push ' + $repo + ' ' + $Branch_Name[$Number] + ' ' + $New_Tag_Name + ')') -ForegroundColor Yellow
 
-    git push $repo $Branch_Name $New_Tag_Name
+    git push $repo $Branch_Name[$Number] $New_Tag_Name
+
+    $Number += 1
 }
 
 ###############################################################################################
